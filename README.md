@@ -1,36 +1,36 @@
 # The Book Nook - Backend
 
-GraphQL API za online knjižaru. Napravljen za seminar iz Tehnika sigurnog programiranja na TVZ-u.
+GraphQL API for an online bookstore built to demonstrate common GraphQL security vulnerabilities.
 
 ## Tech stack
 
 - Node.js + Express
 - Apollo Server 5 (GraphQL)
 - MariaDB (Docker)
-- JWT autentifikacija
+- JWT authentication
 
-## Pokretanje
+## Getting started
 
-### 1. Baza podataka
+### 1. Database
 
 ```bash
 docker compose up -d
 ```
 
-Pokreće MariaDB kontejner na portu 3307. Automatski izvršava `init-db.sql` pri prvom pokretanju.
+Starts a MariaDB container on port 3307. Runs `init-db.sql` automatically on first startup.
 
-### 2. Backend
+### 2. Server
 
 ```bash
 npm install
 npm run dev
 ```
 
-Server se pokreće na `http://localhost:4000/`.
+Runs on `http://localhost:4000/`.
 
-### 3. Environment varijable
+### 3. Environment variables
 
-Već postoji `.env` s defaultnim vrijednostima. Ako treba nešto mijenjati:
+A `.env` file with defaults is included:
 
 ```
 PORT=4000
@@ -42,19 +42,19 @@ DB_NAME=graphql_vuln
 JWT_SECRET=secret123
 ```
 
-## Struktura
+## Project structure
 
 ```
 src/
   server.js       - entry point
-  app.js          - Apollo Server konfiguracija
+  app.js          - Apollo Server config
   db.js           - MySQL connection pool
   auth.js         - JWT sign/verify
   schema/
-    typeDefs.js   - GraphQL shema
-    resolvers.js  - resolveri
+    typeDefs.js   - GraphQL schema
+    resolvers.js  - resolvers
 ```
 
-## Napomena
+## Disclaimer
 
-Aplikacija ima namjerno ugrađene ranjivosti za potrebe seminara. Ne koristiti u produkciji.
+This application has intentionally built-in vulnerabilities for educational purposes. Do not use in production.
